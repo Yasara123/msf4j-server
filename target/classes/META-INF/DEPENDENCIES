@@ -1,0 +1,37 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+swagger-jaxrs-server
+
+
+From: 'an unknown organization'
+  - servlet-api  javax.servlet:servlet-api:jar:2.5
+
+
+From: 'FasterXML' (http://fasterxml.com/)
+  - Jackson-annotations (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-annotations:bundle:2.4.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jackson-core (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-core:bundle:2.4.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - jackson-databind (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-databind:bundle:2.4.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Jackson-datatype-Joda (http://wiki.fasterxml.com/JacksonModuleJoda) com.fasterxml.jackson.datatype:jackson-datatype-joda:bundle:2.4.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Joda.org' (http://www.joda.org)
+  - Joda time (http://joda-time.sourceforge.net) joda-time:joda-time:jar:2.2
+    License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'OSGi Alliance' (http://www.osgi.org)
+  - osgi.cmpn (http://www.osgi.org) org.osgi:org.osgi.compendium:jar:5.0.0
+    License: Apache License, Version 2.0  (http://opensource.org/licenses/apache2.0.php)
+
+From: 'WSO2' (http://www.wso2.org/)
+  - MSF4J - All in one jar file (http://wso2.org/msf4j-all) org.wso2.msf4j:msf4j-all:jar:2.0.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

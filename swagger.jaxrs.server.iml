@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Osmorc" name="OSGi">
+      <configuration manifestGenerationMode="Manually" manifestLocation="${_include}" jarfileLocation="swagger.jaxrs.server-1.0.0.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="${bundle.activator}" bundleSymbolicName="swagger.jaxrs.server" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+        <additionalProperties>
+          <property key="Bundle-Description" value="WSO2 is an open source application development software company focused on providing service-orientedarchitecture solutions for professional developers." />
+          <property key="Bundle-Vendor" value="WSO2 Inc" />
+          <property key="Bundle-DocURL" value="https://docs.wso2.com" />
+          <property key="Bundle-Name" value="swagger.jaxrs.server" />
+          <property key="Export-Package" value="org.wso2.carbon.stream.processor.status.*" />
+          <property key="Import-Package" value="*;resolution:=optional" />
+          <property key="Include-Resource" value="META-INF=$MODULE_DIR$/target/classes/META-INF" />
+          <property key="DynamicImport-Package" value="*" />
+          <property key="Bundle-ActivationPolicy" value="${bundle.activation.policy}" />
+          <property key="Bundle-ClassPath" value="." />
+          <property key="Bundle-Contributors" value="WSO2 Inc" />
+          <property key="Bundle-Copyright" value="WSO2 Inc" />
+          <property key="Bundle-Developers" value="WSO2 Inc" />
+          <property key="Bundle-License" value="http://www.apache.org/licenses/LICENSE-2.0.txt" />
+          <property key="Conditional-Package" value="${conditional.package}" />
+          <property key="Fragment-Host" value="${fragment.host}" />
+          <property key="Meta-Persistence" value="${meta.persistence}" />
+          <property key="Private-Package" value="${private.package}" />
+          <property key="Provide-Capability" value="${provide.capability}" />
+          <property key="Require-Bundle" value="${require.bundle}" />
+          <property key="Require-Capability" value="${require.capability}" />
+          <property key="Service-Component" value="${service.component}" />
+          <property key="Microservices" value="${microservices}" />
+          <property key="-dsannotations" value="*" />
+          <property key="Startup-Component" value="${startup.component}" />
+          <property key="Carbon-Component" value="osgi.service; objectClass=&quot;org.wso2.msf4j.Microservice&quot;; serviceCount=&quot;1&quot;,osgi.service; objectClass=&quot;javax.ws.rs.ext.ExceptionMapper&quot;;serviceCount=&quot;1&quot;" />
+          <property key="SCM-Revision" value="${buildNumber}" />
+        </additionalProperties>
+        <additionalJARContents />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/gen/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.msf4j:msf4j-all:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-joda:2.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.1" level="project" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.osgi:org.osgi.compendium:5.0.0" level="project" />
+  </component>
+</module>

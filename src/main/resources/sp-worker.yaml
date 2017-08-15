@@ -1,0 +1,146 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Siddhi Application Service
+  description: This provides information about the REST APIs available for WSO2 Siddhi.
+  contact:
+    name: WSO2
+    url: 'http://wso2.com/smart-analytics'
+    email: architecture@wso2.org
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+schemes:
+  - http
+  - https
+host: analytics.wso2.com
+basePath: /sp-worker
+consumes:
+  - text/plain
+produces:
+  - application/json
+paths:
+  /sp-worker:
+    get:
+      x-wso2-curl: 'curl -k -X GET http://localhost:9090/sp-worker'
+      x-wso2-request: 'GET http://localhost:9090/sp-worker'
+      x-wso2-response: >-
+        HTTP/1.1 200 OK Content-Type: application/json
+        ["product-sp","false","",""]
+      tags:
+        - Artifact
+      summary: Lists Siddhi Applications.
+      operationId: getWorker
+      description: |
+        Provides the name of the worker and gernal details.
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Sucessefully reached to worker.
+  '/sp-worker/{workerID}':
+    get:
+      x-wso2-curl: 'curl -k -X GET http://localhost:9090/sp-worker/worker1'
+      x-wso2-request: 'GET http://localhost:9090/sp-worker/worker1'
+      x-wso2-response: >-
+        HTTP/1.1 200 OK 
+        {"id":"product-sp","isActive":"false","isSync":"false","snapTime":"current"}
+      tags:
+        - Artifact
+      summary: Provides the name of the worker and gernal details.
+      operationId: getWorkerDetails
+      description: >-
+        Provides the name of the worker and gernal details such as name, status,
+        HA details.
+      produces:
+        - application/json
+      parameters:
+        - name: workerID
+          in: path
+          description: The id of the worker.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Sucessefully reached to the worker.
+          schema:
+            $ref: '#/definitions/WorkerDetails'
+        '404':
+          description: Worker is not found.
+          schema:
+            $ref: '#/definitions/ApiResponseMessageWithCode'
+  '/sp-worker/{workerID}/metrics':
+    get:
+      x-wso2-curl: 'curl -k -X GET http://localhost:9090/sp-worker/{{workerID}}/metrics'
+      x-wso2-request: 'GET http://localhost:9090/sp-worker/{{workerID}}/metrics'
+      x-wso2-response: >-
+        HTTP/1.1 200 OK 
+        {"heap-memery":87,"physical-memery":87,"cpu":50,"load-avg":100}
+      tags:
+        - Artifact
+      summary: Provides the current metrics detals of the worker.
+      operationId: getWorkerMetrics
+      description: >-
+        Provides the current metrics detals of the worker such as cpu,load
+        aversge, physical and heap memory.
+      produces:
+        - application/json
+      parameters:
+        - name: workerID
+          in: path
+          description: The id of the worker.
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Sucessefully reached to the worker.
+          schema:
+            $ref: '#/definitions/WorkerMetrics'
+        '404':
+          description: Worker is not found.
+          schema:
+            $ref: '#/definitions/ApiResponseMessageWithCode'
+definitions:
+  WorkerDetails:
+    type: object
+    properties:
+      id:
+        type: string
+        description: Id of the worker
+      is-active:
+        type: string
+        description: Status of theworker
+      is-sync:
+        type: boolean
+        description: is Sync if passive
+      snaptime:
+        type: string
+        description: last snapshot details
+  WorkerMetrics:
+    type: object
+    properties:
+      cpu:
+        type: number
+        description: current CPU of the worker
+      heap-memory:
+        type: number
+        description: current heap memory of the worker
+      physical-memory:
+        type: number
+        description: current physical memory of the worker
+      load-average:
+        type: number
+        description: current load average of the worker
+  ApiResponseMessageWithCode:
+    type: object
+    properties:
+      code:
+        type: integer
+        format: int32
+        description: Unique error code
+      type:
+        type: string
+        description: Error type
+      message:
+        type: string
+        description: Error message
