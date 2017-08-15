@@ -66,7 +66,7 @@ paths:
           schema:
             $ref: '#/definitions/WorkerDetails'
         '404':
-          description: Worker is not found.
+          description: WorkerDetails is not found.
           schema:
             $ref: '#/definitions/ApiResponseMessageWithCode'
   '/sp-worker/{workerID}/metrics':
@@ -97,7 +97,7 @@ paths:
           schema:
             $ref: '#/definitions/WorkerMetrics'
         '404':
-          description: Worker is not found.
+          description: WorkerDetails is not found.
           schema:
             $ref: '#/definitions/ApiResponseMessageWithCode'
 definitions:

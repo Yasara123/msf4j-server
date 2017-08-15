@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1502805960840
+Bnd-LastModified: 1502824405993
 Build-Jdk: 1.8.0_144
 Built-By: yasara
 Bundle-Contributors: WSO2 Inc
@@ -23,13 +23,17 @@ DynamicImport-Package: *
 Export-Package: org.wso2.carbon.stream.processor.status.api;uses:="com.f
  asterxml.jackson.databind.util,com.fasterxml.jackson.jaxrs.json,io.swag
  ger.annotations,javax.servlet,javax.ws.rs,javax.ws.rs.core,javax.ws.rs.
- ext,javax.xml.bind.annotation,org.wso2.carbon.stream.processor.status.m
- odel,org.wso2.msf4j";version="1.0.0",org.wso2.carbon.stream.processor.s
- tatus.factories;uses:="org.wso2.carbon.stream.processor.status.api";ver
- sion="1.0.0",org.wso2.carbon.stream.processor.status.impl;uses:="javax.
- ws.rs.core,org.wso2.carbon.stream.processor.status.api";version="1.0.0"
- ,org.wso2.carbon.stream.processor.status.model;uses:="io.swagger.annota
- tions";version="1.0.0"
+ ext,javax.xml.bind.annotation,org.wso2.carbon.kernel.configprovider,org
+ .wso2.carbon.stream.processor.status.model,org.wso2.msf4j";version="1.0
+ .0",org.wso2.carbon.stream.processor.status.factories;uses:="org.wso2.c
+ arbon.stream.processor.status.api";version="1.0.0",org.wso2.carbon.stre
+ am.processor.status.impl;uses:="javax.ws.rs.core,org.wso2.carbon.stream
+ .processor.status.api";version="1.0.0",org.wso2.carbon.stream.processor
+ .status.internal;uses:="org.osgi.framework,org.osgi.service.jndi,org.ws
+ o2.carbon.datasource.core.api,org.wso2.carbon.kernel.config.model,org.w
+ so2.carbon.kernel.internal.config";version="1.0.0",org.wso2.carbon.stre
+ am.processor.status.model;uses:="io.swagger.annotations";version="1.0.0
+ "
 Implementation-Title: swagger-jaxrs-server
 Implementation-Vendor: WSO2
 Implementation-Vendor-Id: org.wso2.carbon.stream.processor.status
@@ -39,21 +43,38 @@ Import-Package: com.fasterxml.jackson.annotation;resolution:=optional;ve
  sion="[2.4,3)",com.fasterxml.jackson.databind.util;resolution:=optional
  ;version="[2.4,3)",com.fasterxml.jackson.datatype.joda;resolution:=opti
  onal;version="[2.4,3)",com.fasterxml.jackson.jaxrs.json;resolution:=opt
- ional,io.swagger.annotations;resolution:=optional,javax.servlet;resolut
- ion:=optional,javax.servlet.http;resolution:=optional,javax.ws.rs;resol
- ution:=optional,javax.ws.rs.core;resolution:=optional,javax.ws.rs.ext;r
- esolution:=optional,javax.xml.bind.annotation;resolution:=optional,org.
- apache.commons.logging;resolution:=optional,org.wso2.carbon.stream.proc
- essor.status.api;resolution:=optional,org.wso2.carbon.stream.processor.
- status.factories;resolution:=optional,org.wso2.carbon.stream.processor.
- status.impl;resolution:=optional,org.wso2.carbon.stream.processor.statu
- s.model;resolution:=optional,org.wso2.msf4j;resolution:=optional
+ ional,com.google.gson;resolution:=optional,com.zaxxer.hikari;resolution
+ :=optional;version="[2.4,3)",io.swagger.annotations;resolution:=optiona
+ l,javax.inject;resolution:=optional,javax.servlet;resolution:=optional,
+ javax.servlet.http;resolution:=optional,javax.ws.rs;resolution:=optiona
+ l,javax.ws.rs.core;resolution:=optional,javax.ws.rs.ext;resolution:=opt
+ ional,javax.xml.bind.annotation;resolution:=optional,org.apache.commons
+ .logging;resolution:=optional,org.osgi.framework;resolution:=optional;v
+ ersion="[1.8,2)",org.osgi.service.jndi;resolution:=optional;version="[1
+ .0,2)",org.slf4j;resolution:=optional;version="[1.7,2)",org.wso2.carbon
+ .datasource.core.api;resolution:=optional;version="[1.1,2)",org.wso2.ca
+ rbon.datasource.core.beans;resolution:=optional;version="[1.1,2)",org.w
+ so2.carbon.datasource.core.exception;resolution:=optional;version="[1.1
+ ,2)",org.wso2.carbon.kernel.config.model;resolution:=optional;version="
+ [5.2,6)",org.wso2.carbon.kernel.configprovider;resolution:=optional;ver
+ sion="[5.2,6)",org.wso2.carbon.kernel.internal.config;resolution:=optio
+ nal,org.wso2.carbon.stream.processor.status.api;resolution:=optional,or
+ g.wso2.carbon.stream.processor.status.factories;resolution:=optional,or
+ g.wso2.carbon.stream.processor.status.impl;resolution:=optional,org.wso
+ 2.carbon.stream.processor.status.internal;resolution:=optional,org.wso2
+ .carbon.stream.processor.status.model;resolution:=optional,org.wso2.msf
+ 4j;resolution:=optional
 Main-Class: org.wso2.carbon.stream.processor.status.api.Application
 Provide-Capability: osgi.service;objectClass:List<String>="org.wso2.msf4
  j.Microservice"
-Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
-SCM-Revision: 2017-08-15T14:05:46Z
-Service-Component: OSGI-INF/Test-Server.xml
+Require-Capability: osgi.service;filter:="(objectClass=org.wso2.carbon.d
+ atasource.core.api.DataSourceManagementService)";effective:=active;card
+ inality:=multiple,osgi.service;filter:="(objectClass=org.wso2.carbon.da
+ tasource.core.api.DataSourceService)";effective:=active;cardinality:=mu
+ ltiple,osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+SCM-Revision: c95ee73850f56b63ac1040b0e1733c02f7bc47f0
+Service-Component: OSGI-INF/Test-Server.xml,OSGI-INF/org.wso2.carbon.ker
+ nel.datasource.sample.xml
 Specification-Title: swagger-jaxrs-server
 Specification-Vendor: WSO2
 Specification-Version: 1.0.0

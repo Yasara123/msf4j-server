@@ -14,39 +14,6 @@
 
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
-    <!--<plugins>-->
-      <!--<plugin>-->
-        <!--<groupId>org.apache.maven.plugins</groupId>-->
-        <!--<artifactId>maven-jar-plugin</artifactId>-->
-        <!--<configuration>-->
-          <!--<archive>-->
-            <!--<manifest>-->
-              <!--<mainClass>org.wso2.carbon.stream.processor.status.api.Application</mainClass>-->
-            <!--</manifest>-->
-          <!--</archive>-->
-        <!--</configuration>-->
-      <!--</plugin>-->
-
-      <!--<plugin>-->
-        <!--<groupId>org.codehaus.mojo</groupId>-->
-        <!--<artifactId>build-helper-maven-plugin</artifactId>-->
-        <!--<version>1.9.1</version>-->
-        <!--<executions>-->
-          <!--<execution>-->
-            <!--<id>add-source</id>-->
-            <!--<phase>generate-sources</phase>-->
-            <!--<goals>-->
-              <!--<goal>add-source</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-              <!--<sources>-->
-                <!--<source>src/gen/java</source>-->
-              <!--</sources>-->
-            <!--</configuration>-->
-          <!--</execution>-->
-        <!--</executions>-->
-      <!--</plugin>-->
-    <!--</plugins>-->
       <plugins>
           <plugin>
               <groupId>org.apache.felix</groupId>
@@ -121,6 +88,19 @@
                   </execution>
               </executions>
           </plugin>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>1.8</source>
+                  <target>1.8</target>
+                  <encoding>${project.build.sourceEncoding}</encoding>
+                  <!--<compilerArgument>-proc:none</compilerArgument>-->
+                  <annotationProcessors>
+                      <annotationProcessor>lombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
+                  </annotationProcessors>
+              </configuration>
+          </plugin>
       </plugins>
     <pluginManagement>
       <plugins>
@@ -148,6 +128,12 @@
       <artifactId>jackson-datatype-joda</artifactId>
       <version>2.4.1</version>
     </dependency>
+      <dependency>
+          <groupId>org.wso2.carbon.datasources</groupId>
+          <artifactId>org.wso2.carbon.datasource.core</artifactId>
+          <version>1.1.2</version>
+      </dependency>
+
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.compendium</artifactId>
@@ -157,6 +143,17 @@
           <groupId>org.wso2.carbon</groupId>
           <artifactId>org.wso2.carbon.core</artifactId>
           <version>5.2.0-m3</version>
+      </dependency>
+      <dependency>
+          <groupId>com.exsoloscript.challonge</groupId>
+          <artifactId>challonge-java</artifactId>
+          <version>1.0.1</version>
+      </dependency>
+      <dependency>
+          <groupId>org.projectlombok</groupId>
+          <artifactId>lombok</artifactId>
+          <version>1.16.6</version>
+          <scope>provided</scope>
       </dependency>
   </dependencies>
   <repositories>

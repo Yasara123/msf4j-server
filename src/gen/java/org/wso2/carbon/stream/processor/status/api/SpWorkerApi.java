@@ -5,6 +5,7 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import io.swagger.annotations.ApiParam;
+import org.wso2.carbon.kernel.configprovider.CarbonConfigurationException;
 import org.wso2.carbon.stream.processor.status.factories.SpWorkerApiServiceFactory;
 import org.wso2.carbon.stream.processor.status.impl.SpWorkerApiServiceImpl;
 import org.wso2.carbon.stream.processor.status.model.InlineResponse200;
@@ -50,10 +51,10 @@ public class SpWorkerApi implements Microservice {
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Sucessefully reached to the worker.", response = InlineResponse200.class),
         
-        @io.swagger.annotations.ApiResponse(code = 404, message = "Worker is not found.", response = InlineResponse200.class) })
+        @io.swagger.annotations.ApiResponse(code = 404, message = "WorkerDetails is not found.", response = InlineResponse200.class) })
     public Response getWorkerDetails(@ApiParam(value = "The id of the worker.",required=true) @PathParam("workerID") String workerID
 )
-            throws javax.ws.rs.NotFoundException, NotFoundException {
+            throws javax.ws.rs.NotFoundException, NotFoundException, CarbonConfigurationException {
         return delegate.getWorkerDetails(workerID);
     }
     @GET
@@ -64,7 +65,7 @@ public class SpWorkerApi implements Microservice {
     @io.swagger.annotations.ApiResponses(value = { 
         @io.swagger.annotations.ApiResponse(code = 200, message = "Sucessefully reached to the worker.", response = InlineResponse2001.class),
         
-        @io.swagger.annotations.ApiResponse(code = 404, message = "Worker is not found.", response = InlineResponse2001.class) })
+        @io.swagger.annotations.ApiResponse(code = 404, message = "WorkerDetails is not found.", response = InlineResponse2001.class) })
     public Response getWorkerMetrics(@ApiParam(value = "The id of the worker.",required=true) @PathParam("workerID") String workerID
 )
     throws NotFoundException {

@@ -7,6 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="swagger-jaxrs-server" />
+      </profile>
+      <profile name="Annotation profile for swagger-jaxrs-server" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processor name="lombok.launch.AnnotationProcessorHider$AnnotationProcessor" />
         <module name="swagger.jaxrs.server" />
       </profile>
     </annotationProcessing>
