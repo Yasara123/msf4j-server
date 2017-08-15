@@ -7,6 +7,7 @@ org/wso2/carbon/stream/processor/status/api/SpWorkerApiService.class
 org/wso2/carbon/stream/processor/status/api/JacksonJsonProvider.class
 org/wso2/carbon/stream/processor/status/model/ApiResponseMessageWithCode.class
 org/wso2/carbon/stream/processor/status/model/InlineResponse404.class
+org/wso2/carbon/stream/processor/status/internal/OperatingSystemMetricSet.class
 org/wso2/carbon/stream/processor/status/internal/DataSourceServiceListenerComponent.class
 org/wso2/carbon/stream/processor/status/model/InlineResponse200.class
 org/wso2/carbon/stream/processor/status/factories/SpWorkerApiServiceFactory.class
