@@ -3,9 +3,11 @@ package org.wso2.carbon.stream.processor.status.impl;
 import com.google.gson.Gson;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import org.wso2.carbon.config.ConfigurationException;
+import org.wso2.carbon.config.provider.ConfigProvider;
+
 import org.wso2.carbon.kernel.config.model.CarbonConfiguration;
-import org.wso2.carbon.kernel.configprovider.CarbonConfigurationException;
-import org.wso2.carbon.kernel.configprovider.ConfigProvider;
 import org.wso2.carbon.stream.processor.status.api.ApiResponseMessage;
 import org.wso2.carbon.stream.processor.status.api.NotFoundException;
 import org.wso2.carbon.stream.processor.status.api.SpWorkerApiService;
@@ -37,12 +39,12 @@ public class SpWorkerApiServiceImpl extends SpWorkerApiService {
             Gson gson = new Gson();
             jsonString = gson.toJson(carbonConfiguration.getId());
             status = Response.Status.OK;
-        } catch (CarbonConfigurationException e) {
-            status = Response.Status.NOT_FOUND;
-            WorkerDetails wk = new WorkerDetails();
-            Gson gson = new Gson();
-            jsonString = gson.toJson(wk);
-            log.error("Error");
+        } catch (ConfigurationException e) {
+                status = Response.Status.NOT_FOUND;
+                WorkerDetails wk = new WorkerDetails();
+                Gson gson = new Gson();
+                jsonString = gson.toJson(wk);
+                log.error("Error");
         }
         return Response.status(status).entity(jsonString).build();
     }
@@ -63,7 +65,7 @@ public class SpWorkerApiServiceImpl extends SpWorkerApiService {
             Gson gson = new Gson();
             jsonString = gson.toJson(wk);
             status = Response.Status.OK;
-        } catch (CarbonConfigurationException e) {
+        } catch (ConfigurationException e) {
             status = Response.Status.NOT_FOUND;
             WorkerDetails wk = new WorkerDetails();
             Gson gson = new Gson();

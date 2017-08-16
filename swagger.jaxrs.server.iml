@@ -24,9 +24,9 @@
     <orderEntry type="library" name="Maven: commons-io.wso2:commons-io:2.4.0.wso2v1" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.eclipse.osgi:org.eclipse.osgi:3.10.2.v20150203-1939" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:2.4.1" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.carbon.jndi:org.wso2.carbon.jndi:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.carbon.config:org.wso2.carbon.config:2.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.12" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.17" level="project" />
     <orderEntry type="library" name="Maven: org.easymock:easymock:3.4" level="project" />
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.2" level="project" />

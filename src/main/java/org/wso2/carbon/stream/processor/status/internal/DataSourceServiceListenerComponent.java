@@ -16,9 +16,10 @@ import org.wso2.carbon.datasource.core.beans.DataSourceMetadata;
 import org.wso2.carbon.datasource.core.exception.DataSourceException;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  * Example class.
  */
@@ -51,19 +52,26 @@ public class DataSourceServiceListenerComponent {
             HikariDataSource dsObject = (HikariDataSource) service.getDataSource("WSO2_METRICS_DB");
             //HikariRDBMSDataSource
             connection = dsObject.getConnection();
-            PreparedStatement stmt = null;
+            Statement stmt = null;
             ResultSet rs;
             try {
-                stmt =  connection.prepareStatement("select * from METRIC_GAUGE");
-                stmt.close();
-                rs = stmt.executeQuery();
-                logger.info(rs.toString());
+                String query = "select * from METRIC_GAUGE";
+                // create the java statement
+                stmt = connection.createStatement();
+                // execute the query, and get a java resultset
+                rs = stmt.executeQuery(query);
+                while (rs.next()) {
+                    String name = rs.getString("NAME");
+                    String value = rs.getString("VALUE");
+                    logger.info("---->> " + name + ":" + value);
+                }
                 rs.close();
+                stmt.close();
             } catch (SQLException e) {
+                assert stmt != null;
+                stmt.close();
               logger.error("Error");
             }
-            connection.close();
-            dsObject.close();
             logger.info("Database Major Version {}", connection.getMetaData().getDatabaseMajorVersion());
             //From connection do the required CRUD operation
         } catch (DataSourceException e) {

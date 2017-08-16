@@ -133,7 +133,11 @@
           <artifactId>org.wso2.carbon.datasource.core</artifactId>
           <version>1.1.2</version>
       </dependency>
-
+      <dependency>
+          <groupId>org.wso2.carbon.config</groupId>
+          <artifactId>org.wso2.carbon.config</artifactId>
+          <version>${carbon.config.version}</version>
+      </dependency>
     <dependency>
       <groupId>org.osgi</groupId>
       <artifactId>org.osgi.compendium</artifactId>
@@ -166,6 +170,8 @@
     </repository>
   </repositories>
   <properties>
+      <carbon.config.version>2.0.3</carbon.config.version>
+      <carbon.config.version.range>[2.0.0, 3.0.0)</carbon.config.version.range>
       <mavan.findbugsplugin.exclude.file>findbugs-exclude.xml</mavan.findbugsplugin.exclude.file>
     <carbon.kernel.package.import.version.range>[5.0.0, 6.0.0)</carbon.kernel.package.import.version.range>
     <osgi.framework.import.version.range>[1.8.0, 2.0.0)</osgi.framework.import.version.range>

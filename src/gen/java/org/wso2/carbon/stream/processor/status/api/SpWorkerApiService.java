@@ -1,6 +1,6 @@
 package org.wso2.carbon.stream.processor.status.api;
 
-import org.wso2.carbon.kernel.configprovider.CarbonConfigurationException;
+
 
 import javax.ws.rs.core.Response;
 
@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
 public abstract class SpWorkerApiService {
     public abstract Response getWorker() throws NotFoundException;
     public abstract Response getWorkerDetails(String workerID
- ) throws NotFoundException, CarbonConfigurationException;
+ ) throws NotFoundException;
     public abstract Response getWorkerMetrics(String workerID
  ) throws NotFoundException;
 }
