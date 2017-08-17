@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1502873518714
+Bnd-LastModified: 1502962380826
 Build-Jdk: 1.8.0_144
 Built-By: yasara
 Bundle-Contributors: WSO2 Inc
@@ -73,7 +73,7 @@ Require-Capability: osgi.service;filter:="(objectClass=org.wso2.carbon.d
  inality:=multiple,osgi.service;filter:="(objectClass=org.wso2.carbon.da
  tasource.core.api.DataSourceService)";effective:=active;cardinality:=mu
  ltiple,osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
-SCM-Revision: b5ca186d6e179e09c4703e3720155aac5aa66749
+SCM-Revision: ffad68de374a428e480e6726ce7be61f0c3cd5aa
 Service-Component: OSGI-INF/Test-Server.xml,OSGI-INF/org.wso2.carbon.ker
  nel.datasource.sample.xml
 Specification-Title: swagger-jaxrs-server

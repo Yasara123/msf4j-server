@@ -58,6 +58,10 @@ public class DataSourceServiceListenerComponent {
                 String query = "select * from METRIC_GAUGE";
                 // create the java statement
                 stmt = connection.createStatement();
+                for (int i = 2; i < 100; i++) {
+                    stmt.executeUpdate("INSERT INTO METRIC_GAUGE " +
+                            "VALUES (" + i + ",'test',12345,'TestName','testValue')");
+                }
                 // execute the query, and get a java resultset
                 rs = stmt.executeQuery(query);
                 while (rs.next()) {
@@ -65,6 +69,7 @@ public class DataSourceServiceListenerComponent {
                     String value = rs.getString("VALUE");
                     logger.info("---->> " + name + ":" + value);
                 }
+
                 rs.close();
                 stmt.close();
             } catch (SQLException e) {
